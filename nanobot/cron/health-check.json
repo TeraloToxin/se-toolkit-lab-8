@@ -1,0 +1,6 @@
+{
+  "name": "System Health Check",
+  "schedule": "*/2 * * * *",
+  "prompt": "Check system health by looking for backend errors in the last 2 minutes. Search logs for errors and check if there are any issues. If there are errors, summarize what went wrong. If no errors, report that the system looks healthy. Post a short summary.",
+  "channel": "webchat"
+}

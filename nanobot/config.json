@@ -1,0 +1,43 @@
+{
+  "providers": {
+    "custom": {
+      "apiKey": "sk-f0dc22c836570425ae4d53ae1ee821d4",
+      "apiBase": "http://localhost:42005/v1"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": "coder-model"
+    }
+  },
+  "gateway": {
+    "port": 18790
+  },
+  "tools": {
+    "mcpServers": {
+      "lms": {
+        "command": "python",
+        "args": [
+          "-m",
+          "mcp_lms",
+          "http://backend:8000"
+        ],
+        "env": {
+          "NANOBOT_LMS_API_KEY": "lms-secret-key-lab8"
+        }
+      },
+      "observability": {
+        "command": "python",
+        "args": [
+          "-m",
+          "mcp_lms",
+          "observability"
+        ],
+        "env": {
+          "VICTORIALOGS_URL": "http://victorialogs:9428",
+          "VICTORIATRACES_URL": "http://victoriatraces:10428"
+        }
+      }
+    }
+  }
+}
